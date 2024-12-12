@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Proyecto Django{% endblock %}</title>
+    <!-- Agregar aquí tus estilos CSS, por ejemplo: -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'crear_autor' %}">Crear Autor</a></li>
+            <li><a href="{% url 'list_autores' %}">Lista de Autores</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% extends 'miapp/base.html' %}
+
+        {% block title %}Bienvenido a la Página de Inicio{% endblock %}
+
+        {% block content %}
+        <h1>Bienvenidos a nuestro sitio web</h1>
+        <p>Este es un ejemplo de la página principal de nuestra aplicación Django.</p>
+        <p>Explora el sitio para ver más funcionalidades.</p>
+        {% endblock %}
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Mi Proyecto Django</p>
+    </footer>
+</body>
+
+</html>
